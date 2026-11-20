@@ -7,8 +7,6 @@
 [![Node.js Version](https://img.shields.io/badge/Node.js-14.21.3-blue.svg)](https://nodejs.org/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
 
-The coverage and test-count badges are a verified snapshot of [CI run 41007469847](https://github.com/thu2005/realworld/actions/runs/41007469847), not live metrics. The CI badge reflects the latest `next` run.
-
 An implementation of the [RealWorld](https://github.com/gothinkster/realworld) specification (Medium.com clone) featuring fullstack Node.js, Express, Sequelize, SQLite/PostgreSQL, and Next.js, equipped with automated CI/CD pipelines, multi-layer testing, and JUnit XML test reporting.
 
 ---
@@ -22,10 +20,6 @@ An implementation of the [RealWorld](https://github.com/gothinkster/realworld) s
 | **SuperTest API Tests (Task C-2)** | [![API Tests](https://img.shields.io/badge/SuperTest-15%20passed-success.svg)](https://github.com/thu2005/realworld/actions/workflows/ci.yml) | 15 integration tests covering Auth, User CRUD, Articles, Tags, Profiles, Comments |
 | **JUnit XML Reporting (Task C-3)** | [![JUnit XML](https://img.shields.io/badge/JUnit%20XML-Configured-blue.svg)](https://github.com/thu2005/realworld/actions/workflows/ci.yml) | Standard JUnit XML output for CI & Jenkins (`test-reports/junit/jest-unit.xml`, `test-reports/junit/jest-api.xml`) |
 | **Mocha & Newman Legacy** | [![Mocha & Newman](https://img.shields.io/badge/Mocha%20%26%20Newman-Passing-green.svg)](https://github.com/thu2005/realworld/actions/workflows/ci.yml) | Base application regression tests (`mocha.xml`, `newman.xml`) |
-
-The CI workflow has 11 jobs. The Docker build waits for lint, unit tests, API tests, and the npm audit security gate. The audit gate fails when it finds high or critical dependency vulnerabilities; a failed gate prevents the Docker build and GHCR push. CodeQL runs in a separate workflow, so a successful scan means the analysis completed, not that it found zero alerts. Check [Code scanning alerts](https://github.com/thu2005/realworld/security/code-scanning) for findings.
-
-The Allure artifact is generated from the 31 Jest unit and 15 SuperTest JUnit test cases. Artifacts have a limited retention period; use a recent run when demonstrating downloads.
 
 ---
 
