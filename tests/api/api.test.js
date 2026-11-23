@@ -64,17 +64,20 @@ describe('Integration Tests: RealWorld REST API (SuperTest)', () => {
     });
 
     test('POST /api/users/login - Should reject invalid password with 422', async () => {
-      const res = await request
-        .post('/api/users/login')
-        .send({
-          user: {
-            email: testUser.user.email,
-            password: 'incorrect_password'
-          }
-        });
+        const res = await request
+            .post('/api/users/login')
+            .send({
+                user: {
+                    email: testUser.user.email,
+                    password: 'incorrect_password'
+                }
+            });
 
-      expect(res.status).toBe(422);
+        // Sửa lại thành mã 422 chuẩn RESTful
+        expect(res.status).toBe(422);
+        expect(res.body.errors).toBeDefined();
     });
+
 
     test('GET /api/user - Should return current user when authenticated (200)', async () => {
       if (!token) return;
